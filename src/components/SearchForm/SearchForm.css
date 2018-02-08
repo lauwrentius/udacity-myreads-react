@@ -1,0 +1,63 @@
+.search-form {
+  width: 100%;
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+}
+
+
+.search-form-input-wrapper input {
+  /* width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+  border: none;
+  outline: none; */
+}
+
+.close-search {
+  position: relative;
+  display: block;
+  /* top: 20px; */
+  /* left: 15px; */
+  width: 50px;
+  height: 53px;
+  /* background: white;
+  background-image: url('./assets/arrow-back.svg'); */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px; */
+  font-size: 0;
+}
+.close-search span{
+  position: absolute;
+  color: #888888;
+  top: 10px;
+  left: 12px;
+}
+
+.autocomplete-wrapper{
+  flex: 1;
+  background: white;
+}
+.autocomplete-wrapper form{
+  width: 100%;
+  display: block;
+}
+.autocomplete-wrapper form > div{
+  width: 100%;
+  display: block;
+}
+.autocomplete-wrapper input{
+  width: 100%;
+  border: none;
+  height: 53px;
+  outline: none;
+  font-size: 18px;
+}
+.autocomplete-wrapper select{
+  font-size: 14px;
+  line-height: 18px;
+  padding-top: 50px;
+}
+.autocomplete-wrapper option{
+  height: 25px;
+}

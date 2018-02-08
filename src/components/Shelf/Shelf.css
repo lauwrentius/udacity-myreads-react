@@ -1,0 +1,42 @@
+.bookshelf {
+  padding: 0 10px 20px;
+}
+
+@media (min-width: 600px) {
+  .bookshelf {
+    padding: 0 20px 40px;
+  }
+}
+
+.bookshelf-title {
+  border-bottom: 1px solid #dedede;
+}
+.bookshelf-select{
+  position: relative;
+  display: inline-block;
+  padding-left: 15px;
+  margin-top: 0px;
+}
+.bookshelf-books {
+  text-align: center;
+}
+
+
+.books-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left;
+}
+.shelf-checkbox{
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px 5px 0px 0px;
+}

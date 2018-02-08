@@ -1,0 +1,68 @@
+.book {
+  display: inline-block;
+  vertical-align: top;
+  width: 140px;
+}
+.book-title,
+.book-authors {
+  font-size: 0.8em;
+}
+.book-title {
+  margin-top: 15px;
+}
+.book-authors {
+  color: #999;
+}
+.book-author {
+  display: block;
+}
+
+.book-top {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+.book-cover {
+  background-color: #cccccc;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: #eee;
+}
+.book-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.8em;
+}
+.book-info-btn{
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 0px;
+  right: 0px;
+}
+.book-info-btn button{
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border-color: transparent;
+  outline: none;
+  background-color: #60ac5d;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.book-info-btn button span{
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  color: white;
+}
+
+.select-shelf-container {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+}

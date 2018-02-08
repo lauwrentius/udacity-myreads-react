@@ -1,0 +1,18 @@
+.emptyResults{
+  text-align: center;
+}
+
+.emptyResults p{
+  font-weight: normal;
+  padding: 20px 40px;
+  margin: 0px auto;
+  background: #eeeeee;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.hidden{
+  display: none;
+}
