@@ -69,6 +69,7 @@ class App extends Component {
 
     for (let i = 0; i < booksAdd.length; i++) {
       let book = Object.assign({}, booksAdd[i], {shelf: type})
+      BooksAPI.update(book, type)
       searchResults = searchResults.filter(e => e.id !== booksAdd[i].id)
       books = books.concat(book)
     }
@@ -89,7 +90,9 @@ class App extends Component {
   onShelfChange = (booksMove, type) => {
     let books = this.state.books.map(book => {
       if (booksMove.find(e => e.id === book.id) !== undefined) {
-        BooksAPI.update(book, type)
+        BooksAPI.update(book, type).then(res=>{
+          console.log(res)
+        })
         return Object.assign({}, book, {shelf: type})
       }
       return book

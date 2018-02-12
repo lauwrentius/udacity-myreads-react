@@ -71,7 +71,11 @@ class SearchForm extends Component {
                   : 'transparent'
               }}>
               {item.label}
-            </div>} value={this.state.inputVal} onChange={e => this.setState({inputVal: e.target.value})} onSelect={this.onSelect} inputProps={{
+            </div>}
+            value={this.state.inputVal} 
+            onChange={e => this.setState({inputVal: e.target.value})}
+            onSelect={this.onSelect}
+            inputProps={{
               "placeholder" : "Search by title or author",
               "size" : 10
             }} menuStyle={{
