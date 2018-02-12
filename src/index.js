@@ -9,6 +9,7 @@ import App from './App';
 
 const history = createHistory()
 
+/** Index file where the app is mounted */
 ReactDOM.render(
   <Router history={history}><App /></Router>,
   document.getElementById('root'))

@@ -16,13 +16,11 @@ class App extends Component {
   state = {
     /** Array of Books on the 3 shelves loaded from BooksAPI */
     books: [],
-
     /** Book Search Object. Contains the search terms and Array of books Search Results  */
     bookSearch: {
       searchTerm: "",
       searchResults: []
     },
-
     /** Book Info state. Contains information for additional book details   */
     bookInfo: null
   }
@@ -51,12 +49,19 @@ class App extends Component {
       let books = res
       this.setState({books})
     })
+
+    let location = this.props.location
+    if (location.pathname === "/search") {
+      let searchTerms = location.search.substring(1)
+      if(searchTerms !== '')
+        this.onBookSearch(searchTerms, false)
+    }
   }
 
   /**
   * @description This function is called when an array of Books are added from the searchResults.
   * @param {array} booksAdd - Array of books to be added from the search results
-  * @param {string} type - the bookshelf target desitination
+  * @param {string} type - the bookshelf target destination
   */
   onAddBooks = (booksAdd, type) => {
     let searchResults = this.state.bookSearch.searchResults
@@ -133,7 +138,7 @@ class App extends Component {
   onInfoClose = () => {
     this.setState({bookInfo: null})
   }
- 
+
   /**
   * @description This function will render the application.
   */

@@ -4,12 +4,20 @@ import Octicon from 'react-octicon'
 
 import './BookInfo.css'
 
+/**
+* @description Book Info Class component. Displays info details.
+*/
 class BookInfo extends Component {
   static propTypes = {
+    /** Book Object info */
     bookInfo: PropTypes.object,
-    onInfoClose: PropTypes.func
+    /** Callback function when book info close button is clicked */
+    onInfoClose: PropTypes.func.isRequired
   }
 
+  /**
+  * @description This function will display the BookInfo.
+  */
   render() {
     const { bookInfo, onInfoClose } = this.props
 
@@ -22,7 +30,7 @@ class BookInfo extends Component {
       authors = bookInfo.authors.map((author, i)=>
         <span key={i}>{author}</span>).reduce((a,b) =>[a,', ',b])
     else
-      authors = N/A
+      authors = 'N/A'
 
     if (bookInfo.imageLinks)
       bookBG = bookInfo.imageLinks.smallThumbnail

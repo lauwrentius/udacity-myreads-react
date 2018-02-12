@@ -4,27 +4,14 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
 }
 
-
 .search-form-input-wrapper input {
-  /* width: 100%;
-  padding: 15px 10px;
-  font-size: 1.25em;
-  border: none;
-  outline: none; */
 }
 
 .close-search {
   position: relative;
   display: block;
-  /* top: 20px; */
-  /* left: 15px; */
   width: 50px;
   height: 53px;
-  /* background: white;
-  background-image: url('./assets/arrow-back.svg'); */
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: 28px; */
   font-size: 0;
 }
 .close-search span{

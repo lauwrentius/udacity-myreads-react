@@ -6,22 +6,33 @@ import SearchForm from '../SearchForm'
 import Shelf from '../Shelf'
 
 import './SearchListings.css'
+
+/**
+* @description SearchListings Class component. Displays book search result shelf and searchForm.
+*/
 class SearchListings extends Component {
   static propTypes = {
+    /** Book Search Object. Contains the search terms and Array of books Search Results  */
     bookSearch: PropTypes.shape({
       searchTerm: PropTypes.string,
       searchResults: PropTypes.array
     }),
-    onShelfChange: PropTypes.func,
-    onBookSearch: PropTypes.func,
-    onInfoClick: PropTypes.func
+    /** Callback function when book changes shelf */
+    onShelfChange: PropTypes.func.isRequired,
+    /** Callback function when the searchForm is submitted */
+    onBookSearch: PropTypes.func.isRequired,
+    /** Callback function when book info button is clicked */
+    onInfoClick: PropTypes.func.isRequired
   }
 
   state = {
+    /** emptyResults state, toggled when the search result for the books is empty */
     emptyResults: false
   }
-  componentWillMount = () =>{
-  }
+  /**
+  * @description This function is toggling the emtpy result state whever the component will recevie props.
+  * @param {object} nextProps - next prop for SearchListings
+  */
   componentWillReceiveProps = nextProps => {
     if(nextProps.bookSearch.searchTerm !== "" &&
       nextProps.bookSearch.searchResults.length === 0)
@@ -30,11 +41,12 @@ class SearchListings extends Component {
       this.setState({emptyResults: false})
   }
 
-
+  /**
+  * @description This function will render the SearchListings.
+  */
   render(){
     const { bookSearch, onShelfChange, onBookSearch, onInfoClick } = this.props
     const { emptyResults } =  this.state
-    // console.log(this.props)
 
     return(
       <div className="search-listings">
@@ -59,5 +71,4 @@ class SearchListings extends Component {
   }
 }
 
-export default withRouter(SearchListings);
-// searchVal={searchVal}
+export default withRouter(SearchListings)

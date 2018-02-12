@@ -4,12 +4,18 @@ import Octicon from 'react-octicon'
 
 import './ShelfSelectBtn.css'
 
+/**
+* @description ShelfSelectBtn component. Dropdown button cto change shelf.
+*/
 class ShelfSelectBtn extends Component {
   static propTypes = {
+      /** The current shelf value. */
       val: PropTypes.string.isRequired,
+      /** Callback function when a book/s changes shelf */
       onShelfChange: PropTypes.func.isRequired
   }
 
+  /** Available dropdown options for the select shelf */
   shelfOptions = [
     {value: "", label: "Move to...", isDisabled: true },
     {value: "currentlyReading", label: "Currently Reading", isDisabled: false },
@@ -18,6 +24,9 @@ class ShelfSelectBtn extends Component {
     {value: "none", label: "None", isDisabled: false },
   ]
 
+  /**
+  * @description This function will render the Book Shelf.
+  */
   render(){
     const { val, onShelfChange } = this.props
     return (

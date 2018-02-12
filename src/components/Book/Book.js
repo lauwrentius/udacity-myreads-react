@@ -11,17 +11,16 @@ import ShelfSelectBtn from '../ShelfSelectBtn'
 */
 class Book extends Component {
   static propTypes = {
+    /** Book Object info */
     book: PropTypes.object.isRequired,
-    onShelfChange: PropTypes.func,
-    onInfoClick: PropTypes.func
-  }
-
-  state = {
-    selected: false
+    /** Callback function when book changes shelf */
+    onShelfChange: PropTypes.func.isRequired,
+    /** Callback function when book info button is clicked */
+    onInfoClick: PropTypes.func.isRequired
   }
 
   /**
-  * @description This function will render the application.
+  * @description This function will render the Book.
   */
   render() {
     const {book, onShelfChange, onInfoClick} = this.props
