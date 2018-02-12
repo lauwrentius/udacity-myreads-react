@@ -10,22 +10,22 @@ class BookInfo extends Component {
     onInfoClose: PropTypes.func
   }
 
-  componentWillReceiveProps = (nextProps) => {
-    // console.log(nextProps)
-    // this.setState({})
-    if( !nextProps.book ) return;
-
-    this.setState({display: true})
-    // console.log(nextProps.book.authors
-    //     .map((author, i)=> <span key={i} className="bookinfo-author">{author}</span>)
-    //     .reduce((a,b)=> [a,b]));
-  }
-
   render() {
     const { bookInfo, onInfoClose } = this.props
 
     if(bookInfo === null)
       return ("")
+
+    let authors, bookBG
+
+    if (bookInfo.authors)
+      authors = bookInfo.authors.map((author, i)=>
+        <span key={i}>{author}</span>).reduce((a,b) =>[a,', ',b])
+    else
+      authors = N/A
+
+    if (bookInfo.imageLinks)
+      bookBG = bookInfo.imageLinks.smallThumbnail
 
     return (
       <div className="bookinfo">
@@ -37,7 +37,7 @@ class BookInfo extends Component {
 
           <div className="bookinfo-thumbs-wrapper">
             <div className="bookinfo-thumbs"
-              style={{ backgroundImage: `url(${bookInfo.imageLinks.smallThumbnail})`
+              style={{ backgroundImage: `url(${bookBG})`
               }}></div>
           </div>
           <div className="bookinfo-content">
@@ -47,8 +47,7 @@ class BookInfo extends Component {
             </a></p>
           <p><b>Subtitle:</b> { bookInfo.subtitle }</p>
 
-          <p><b>Authors:</b> {bookInfo.authors.map((author, i)=>
-            <span key={i}>{author}</span>).reduce((a,b) =>[a,', ',b])}</p>
+          <p><b>Authors:</b> {authors} </p>
 
           <p><b>Page Count:</b> { bookInfo.pageCount }</p>
           <p><b>Description:</b> { bookInfo.description }</p>

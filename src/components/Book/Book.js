@@ -7,7 +7,7 @@ import './Book.css'
 import ShelfSelectBtn from '../ShelfSelectBtn'
 
 /**
-* @description Book Class component.
+* @description Book Class component. Displays a single book on a shelf.
 */
 class Book extends Component {
   static propTypes = {

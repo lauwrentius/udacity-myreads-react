@@ -133,14 +133,14 @@ class App extends Component {
   onInfoClose = () => {
     this.setState({bookInfo: null})
   }
-
+ 
   /**
   * @description This function will render the application.
   */
   render() {
     const {books, bookSearch, bookInfo} = this.state
     return (<div className="app">
-      <Route exact="exact" path='/' render={() => (<BookListings books={books} onShelfChange={this.onShelfChange} onInfoClick={this.onInfoClick}></BookListings>)}/>
+      <Route exact path='/' render={() => (<BookListings books={books} onShelfChange={this.onShelfChange} onInfoClick={this.onInfoClick}></BookListings>)}/>
       <Route path='/search' render={() => (<SearchListings onShelfChange={this.onAddBooks} onBookSearch={this.onBookSearch} onInfoClick={this.onInfoClick} bookSearch={bookSearch}></SearchListings>)}/>
       <BookInfo bookInfo={bookInfo} onInfoClose={this.onInfoClose}></BookInfo>
     </div>)
